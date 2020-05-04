@@ -18,9 +18,9 @@ export default function Footer() {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <span className={s.text}>© Your Company</span>
-        <span className={s.spacer}>·</span>
-        <Link className={s.link} to="/">
+        <span className={s.text}>© Dk</span>
+        {/* <span className={s.spacer}>·</span> */}
+        {/* <Link className={s.link} to="/">
           Home
         </Link>
         <span className={s.spacer}>·</span>
@@ -34,7 +34,7 @@ export default function Footer() {
         <span className={s.spacer}>·</span>
         <Link className={s.link} to="/not-found">
           Not Found
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

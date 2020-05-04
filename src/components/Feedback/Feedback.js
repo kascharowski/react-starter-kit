@@ -16,7 +16,7 @@ export default function Feedback() {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <a
+        {/* <a
           className={s.link}
           href="https://gitter.im/kriasoft/react-starter-kit"
         >
@@ -28,7 +28,7 @@ export default function Feedback() {
           href="https://github.com/kriasoft/react-starter-kit/issues/new"
         >
           Report an issue
-        </a>
+        </a> */}
       </div>
     </div>
   );

@@ -37,8 +37,15 @@ const kayn = Kayn('RGAPI-5723b425-bcf5-40a1-92e3-44e3089a6cb4')({
   },
 });
 
-// React.js News Feed (RSS)
+// React.js - LoL Matches
 const processMatch = (championIdMap, summonerId, match) => {
+  // console.log('match', match)
+  match.participants.map((part, i) => {
+    console.log('part', part)
+    // if( part ){
+    //   console.log('parts', part[i].stats)
+    // }
+  })
   const { participantId } = match.participantIdentities.find(
     pi => pi.player.summonerId === summonerId,
   );
@@ -64,7 +71,7 @@ const lol = {
     const { matches } = await kayn.Matchlist.by
       .accountID(accountId)
       .query({ queue: 420 });
-    const gameIds = matches.slice(0, 10).map(({ gameId }) => gameId);
+    const gameIds = matches.slice(0, 1).map(({ gameId }) => gameId);
     const matchDtos = await Promise.all(gameIds.map(kayn.Match.get));
     // `processor` is a helper function to make the subsequent `map` cleaner.
     const processor = match => processMatch(championIdMap, id, match);

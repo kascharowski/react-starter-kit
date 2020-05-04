@@ -29,11 +29,11 @@ export default function Header() {
             height="38"
             alt="React"
           />
-          <span className={s.brandTxt}>Your Company</span>
+          <span className={s.brandTxt}>League of Legends - MVP</span>
         </Link>
         <div className={s.banner}>
-          <h1 className={s.bannerTitle}>React</h1>
-          <p className={s.bannerDesc}>Complex web apps made easy</p>
+          <h1 className={s.bannerTitle}>Últimas partidas</h1>
+          <p className={s.bannerDesc}>Teste listando ranked</p>
         </div>
       </div>
     </div>

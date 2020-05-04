@@ -8,23 +8,18 @@
  */
 
 import {
-  GraphQLSchema as Schema,
   GraphQLObjectType as ObjectType,
+  GraphQLString as StringType,
 } from 'graphql';
 
-import me from './queries/me';
-import news from './queries/news';
-import lol from './queries/lol';
-
-const schema = new Schema({
-  query: new ObjectType({
-    name: 'Query',
-    fields: {
-      me,
-      news,
-      lol,
-    },
-  }),
+const MatchesType = new ObjectType({
+  name: 'MatchItem',
+  fields: {
+    gameCreation: { type: StringType },
+    seasonId: { type: StringType },
+    didWin: { type: StringType },
+    championName: { type: StringType },
+  },
 });
 
-export default schema;
+export default MatchesType;

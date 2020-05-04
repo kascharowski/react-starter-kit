@@ -12,35 +12,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Home.css';
 
-export default function Home({ news }) {
+export default function Home({ lol }) {
   useStyles(s);
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <h1>React.js News</h1>
-        {news.map(item => (
-          <article key={item.link} className={s.newsItem}>
-            <h1 className={s.newsTitle}>
-              <a href={item.link}>{item.title}</a>
-            </h1>
-            <div
-              className={s.newsDesc}
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: item.content }}
-            />
-          </article>
-        ))}
+        <h1>5 últimas partidas</h1>
+        <ul>
+          {lol.map((item, index) => (
+            <li key={item.gameCreation}>
+              ID da partida: {item.gameCreation} / Season: {item.seasonId} /
+              Champion: {item.championName} / Vitória: {item.didWin}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 }
 
 Home.propTypes = {
-  news: PropTypes.arrayOf(
+  lol: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-      content: PropTypes.string,
+      gameCreation: PropTypes.string.isRequired,
+      championName: PropTypes.string.isRequired,
+      didWin: PropTypes.string,
     }),
   ).isRequired,
 };
